@@ -1,0 +1,127 @@
+/* Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-appearance: none;
+  font-size: 62.5%;/*10 ÷ 16 × 100% = 62.5%*/
+}
+body {
+  font-family: 'Noto Sans', 'Helvetica Neue', 'Arial', 'Hiragino Sans GB', 'MicrosoftYahei', '微软雅黑';
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  color: #6b6b6b;
+  background: #c7e8ec;
+}
+a, img {
+  -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
+img{
+  width: 100%;
+}
+p {
+  display: block;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+h3 {
+  font-size: 2.4rem;
+  display: block;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#doc1{
+  width: 100%;
+  position: relative;
+  z-index:1;
+  top: 0;
+  left: 0;
+  background: #c7e8ec;
+}
+.hd{
+  padding-top: 7vw;
+  width: 100%;
+}
+.hd img{
+  position: relative;
+}
+.bd img{
+  margin-bottom: 3vw;
+}
+.sum{
+  position: absolute;
+  color: white;
+  font-size: 20vw;
+  font-family: 'Arial', fantasy , 'Noto Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'MicrosoftYahei', '微软雅黑';
+}
+.code{
+  position: absolute;
+  top: 556px;
+  left:365px;
+  font-size: 6.1vw;
+  color: white;
+}
+.hidden{
+ display: none;
+}
+
+#doc2{
+  box-sizing:border-box;
+  padding-top: 10vw;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background:rgba(0,0,0,0.6);
+}
+
+#doc2 h3{
+  font-size: 5vw;
+  margin-bottom: 5%;
+  text-align: center;
+  color: #b5b5b5;
+  height: 5vw;
+  line-height: 5vw;
+}
+#wrapper{
+  position:relative;
+  height:85%;
+  overflow:hidden;
+}
+.content{
+  box-sizing:border-box;
+  margin: 0 5% 2.5% 5% ;
+  padding: 5%;
+  background: white;
+/*  height:85%;
+  overflow-y:scroll;*/
+  font-size: 5vw;
+  line-height: 7.5vw;
+}
+.content span{
+  width: 1.6rem;
+}
+.close{
+  position: absolute;
+  right: 0;
+  width: 20%;
+  top: 7vw;
+}
+.solidheight{
+  height: 100%;
+  overflow: hidden;
+}

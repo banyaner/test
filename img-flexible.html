@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0,maximum-scale=1.0"/>
+    <title>图片宽度自适应</title>
+    <style>
+        /*解决原理：单独的宽度100%会引起所有图片缩放，使用inline-block后，容器宽度由内容宽度决定*/
+        .img-wrap{
+            display: inline-block;
+        }
+        .img-wrap img{
+            width: 100%;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="img-wrap">
+        <img src="img/thing.png" alt=""/>
+        <img src="img/title.png" alt=""/>
+        <img src="img/withTitle.png" alt=""/>
+    </div>
+</body>
+</html>
