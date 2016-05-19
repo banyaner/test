@@ -1,8 +1,7 @@
-
 <!--常用验证方式，失焦时验证-->
 <!--常用正则-->
 <style>
-    section{
+    section {
         padding: 10px;
     }
 </style>
@@ -16,14 +15,14 @@
         <span>url</span>
         <code>var pattern=/^[a-zA-z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$/</code>
     </section>
-<section>
-    <span>由26个英文字母组成的字符串</span>
-    <code>^[A-Za-z]+$</code>
-</section>
-   <section>
-       <span>由数字、26个英文字母或者下划线组成的字符串</span>
-       <code>^\w+$</code>
-   </section>
+    <section>
+        <span>由26个英文字母组成的字符串</span>
+        <code>^[A-Za-z]+$</code>
+    </section>
+    <section>
+        <span>由数字、26个英文字母或者下划线组成的字符串</span>
+        <code>^\w+$</code>
+    </section>
 </div>
 
 
@@ -32,15 +31,17 @@
 <meta charset='utf-8'>
 <style>
     /*基本样式*/
-.form-control{
-    width: 250px;
-    border-radius: 5px;
-    height: 35px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 5px;
-}
-    .center{
+    .form-control {
+        width: 250px;
+        border-radius: 5px;
+        height: 34px;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    }
+
+    .center {
         text-align: center;
     }
 </style>
@@ -54,27 +55,26 @@
 <script type="text/javascript">
     var $email = document.getElementsByName('email')[0];
     console.log($email);
-    $email.addEventListener('blur',function(){
+    $email.addEventListener('blur', function () {
         var email = $email.value;
         if (!email) {
             alert('邮箱不能为空哦！');
-        }else{
+        } else {
 
             //网易邮箱
 //            var pattern = /^[a-z0-9\-_.]+@(((((vip\.)?(163|126))|188)\.com)|(yeah\.net))$/;
 
             //普通邮箱
-            var pattern=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
-            if (pattern.test(email)){
+            var pattern = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+            if (pattern.test(email)) {
                 alert('邮箱输入正确');
-            }else{
+            } else {
                 alert('请输入邮箱账号');
                 $email.focus();
             }
         }
     });
 </script>
-
 
 
 <!--手机号验证-->
@@ -84,15 +84,15 @@
 
 <script type="text/javascript">
     var $phone = document.getElementsByName('phone')[0];
-    $phone.addEventListener('blur',function(){
+    $phone.addEventListener('blur', function () {
         var phone = $phone.value;
         if (!phone) {
             alert('电话不能为空哦！');
-        }else{
-            var pattern=/((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/;
-            if (pattern.test(phone)){
+        } else {
+            var pattern = /((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/;
+            if (pattern.test(phone)) {
                 alert('电话输入正确');
-            }else{
+            } else {
                 alert('请输入电话号码');
                 $phone.focus();
             }
@@ -101,5 +101,31 @@
 </script>
 
 <hr/>
+按钮和样式
+
+<style>
+    .center {
+        text-align: center;
+    }
+    .btn{
+        display: inline-block;
+        height: 34px;
+        padding: 6px 12px;
+        text-align: center;
+        white-space: nowrap;
+        user-select: none;
+        border: 1px solid transparent;
+        border-radius: 5px;
+    }
+.btn-default{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+</style>
+<div class="center">
+    <input type="button" class="btn btn-default" value="提交"/>
+</div>
 
 
