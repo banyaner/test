@@ -1,0 +1,105 @@
+
+<!--常用验证方式，失焦时验证-->
+<!--常用正则-->
+<style>
+    section{
+        padding: 10px;
+    }
+</style>
+<div>
+    <h1>常用正则</h1>
+    <section>
+        <span>正整数</span>
+        <code>var pattern=/^[0-9]*[1-9][0-9]*$/;</code>
+    </section>
+    <section>
+        <span>url</span>
+        <code>var pattern=/^[a-zA-z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$/</code>
+    </section>
+<section>
+    <span>由26个英文字母组成的字符串</span>
+    <code>^[A-Za-z]+$</code>
+</section>
+   <section>
+       <span>由数字、26个英文字母或者下划线组成的字符串</span>
+       <code>^\w+$</code>
+   </section>
+</div>
+
+
+<hr/>
+
+<meta charset='utf-8'>
+<style>
+    /*基本样式*/
+.form-control{
+    width: 250px;
+    border-radius: 5px;
+    height: 35px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+    .center{
+        text-align: center;
+    }
+</style>
+<h1>验证示例</h1>
+
+<!--邮箱验证-->
+<div class="center">
+    <input name="email" class="form-control" type="text" placeholder="输入邮箱账号" value="">
+</div>
+
+<script type="text/javascript">
+    var $email = document.getElementsByName('email')[0];
+    console.log($email);
+    $email.addEventListener('blur',function(){
+        var email = $email.value;
+        if (!email) {
+            alert('邮箱不能为空哦！');
+        }else{
+
+            //网易邮箱
+//            var pattern = /^[a-z0-9\-_.]+@(((((vip\.)?(163|126))|188)\.com)|(yeah\.net))$/;
+
+            //普通邮箱
+            var pattern=/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+            if (pattern.test(email)){
+                alert('邮箱输入正确');
+            }else{
+                alert('请输入邮箱账号');
+                $email.focus();
+            }
+        }
+    });
+</script>
+
+
+
+<!--手机号验证-->
+<div class="center">
+    <input name="phone" class="form-control" type="text" placeholder="输入手机号码" value="">
+</div>
+
+<script type="text/javascript">
+    var $phone = document.getElementsByName('phone')[0];
+    $phone.addEventListener('blur',function(){
+        var phone = $phone.value;
+        if (!phone) {
+            alert('电话不能为空哦！');
+        }else{
+            var pattern=/((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/;
+            if (pattern.test(phone)){
+                alert('电话输入正确');
+            }else{
+                alert('请输入电话号码');
+                $phone.focus();
+            }
+        }
+    });
+</script>
+
+<hr/>
+
+
